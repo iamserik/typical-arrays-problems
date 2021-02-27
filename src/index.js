@@ -1,24 +1,12 @@
 
-exports.min = function min (array) {
-  if(arguments.length === 0 || array.length === 0) return 0;
-  let m = array[0];
-  for(let i=1; i<array.length; i++)
-      m = array[i] > m ? m : array[i];
-  return m;
+exports.min = function min (arr) {
+  return arr === undefined || arr.length === 0 ? 0 : arr.reduce((a, b) => a < b ? a : b);
 }
 
-exports.max = function max (array) {
-  if(arguments.length === 0 || array.length === 0) return 0;
-  let m = array[0];
-  for(let i=1; i<array.length; i++)
-      m = array[i] < m ? m : array[i];
-  return m;
+exports.max = function max (arr) {
+  return arr === undefined || arr.length === 0 ? 0 : arr.reduce((a, b) => a > b ? a : b);
 }
 
-exports.avg = function avg (array) {
-  if(arguments.length === 0 || array.length === 0) return 0;
-  let a = 0;
-  for(let i=0; i<array.length; i++)
-      a += array[i];
-  return (a/array.length);
+exports.avg = function avg (arr) {
+  return arr === undefined || arr.length === 0 ? 0 : arr.reduce((a, b) => a + b)/arr.length;
 }
